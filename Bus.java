@@ -36,3 +36,26 @@ public class Bus {
     public Penumpang[] getPenumpangBerdiri() {
         return penumpangBerdiri.toArray(new Penumpang[0]);
     }
+
+        // ====== Jumlah penumpang ======
+    public int getJumlahPenumpangBiasa() {
+        return penumpangBiasa.size();
+    }
+
+    public int getJumlahPenumpangPrioritas() {
+        return penumpangPrioritas.size();
+    }
+
+    public int getJumlahPenumpangBerdiri() {
+        return penumpangBerdiri.size();
+    }
+
+    public int getTotalPendapatan() {
+        return totalPendapatan;
+    }
+
+    public int getTotalPenumpang() {
+        return getJumlahPenumpangBiasa()
+             + getJumlahPenumpangPrioritas()
+             + getJumlahPenumpangBerdiri();
+    }
