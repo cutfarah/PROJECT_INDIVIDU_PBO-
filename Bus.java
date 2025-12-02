@@ -16,3 +16,10 @@ public class Bus {
     private static final int MAKS_TOTAL = 40;
 
     private int totalPendapatan;
+
+  public Bus() {
+        penumpangBiasa = new ArrayList<>();
+        penumpangPrioritas = new ArrayList<>();
+        penumpangBerdiri = new ArrayList<>();
+        totalPendapatan = 0;
+    }
