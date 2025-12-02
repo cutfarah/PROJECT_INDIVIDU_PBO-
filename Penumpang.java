@@ -53,3 +53,15 @@ public class Penumpang extends Orang implements PembayarBus {
             saldo += saldoBaru;
         }
     }
+
+   @Override
+    public void bayarOngkos(int ongkos) throws SaldoTidakCukupException {
+        if (saldo < ongkos) {
+            throw new SaldoTidakCukupException(
+                "Saldo " + getNama() + " tidak cukup. Saldo: " + saldo +
+                ", ongkos: " + ongkos
+            );
+        }
+        saldo -= ongkos;
+    }
+}
