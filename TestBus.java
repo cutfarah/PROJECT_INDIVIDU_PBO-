@@ -75,3 +75,16 @@ public class TestBus {
             System.out.println("Penumpang gagal naik ke bus.\n");
         }
     }
+
+      private static void turunkanPenumpangMenu(Bus bus, Scanner in) {
+        System.out.print("Nama penumpang yang turun: ");
+        String nama = in.nextLine();
+
+        boolean berhasil = bus.turunkanPenumpang(nama);
+        if (berhasil) {
+            System.out.println("Penumpang berhasil turun.\n");
+        } else {
+            System.out.println("Penumpang tidak ditemukan.\n");
+        }
+    }
+}
