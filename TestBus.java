@@ -48,3 +48,16 @@ public class TestBus {
 
         in.close();
     }
+
+     private static void naikkanPenumpangMenu(Bus bus, Scanner in) {
+        System.out.print("Nama  : ");
+        String nama = in.nextLine();
+
+        System.out.print("Umur  : ");
+        int umur;
+        try {
+            umur = Integer.parseInt(in.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Umur tidak valid.\n");
+            return;
+        }
