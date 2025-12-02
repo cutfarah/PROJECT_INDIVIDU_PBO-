@@ -26,3 +26,25 @@ public class TestBus {
                 System.out.println("Input tidak valid!\n");
                 continue;
             }
+
+                    switch (pilihan) {
+                case 1:
+                    naikkanPenumpangMenu(bus, in);
+                    break;
+                case 2:
+                    turunkanPenumpangMenu(bus, in);
+                    break;
+                case 3:
+                    System.out.println(bus.toString());
+                    break;
+                case 4:
+                    jalan = false;
+                    System.out.println("Program selesai.");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak dikenal.\n");
+            }
+        }
+
+        in.close();
+    }
