@@ -119,3 +119,18 @@ public class Bus {
             System.out.println("Tidak ada posisi yang tersedia untuk penumpang ini.");
             return false;
         }
+
+          // Jika sudah ditempatkan, baru potong saldo dan tambah pendapatan
+        try {
+            p.bayarOngkos(ONGKOS_BUS);
+            totalPendapatan += ONGKOS_BUS;
+            return true;
+        } catch (SaldoTidakCukupException e) {
+            System.out.println(e.getMessage());
+            // rollback: hapus dari list kalau tadi sudah masuk
+            penumpangBiasa.remove(p);
+            penumpangPrioritas.remove(p);
+            penumpangBerdiri.remove(p);
+            return false;
+        }
+    }
