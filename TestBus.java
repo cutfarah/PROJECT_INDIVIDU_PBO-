@@ -61,3 +61,17 @@ public class TestBus {
             System.out.println("Umur tidak valid.\n");
             return;
         }
+
+                 System.out.print("Hamil (y/n): ");
+        String hamilStr = in.nextLine().trim().toLowerCase();
+        boolean hamil = hamilStr.equals("y");
+
+        Penumpang p = new Penumpang(NEXT_ID++, nama, umur, hamil);
+
+        boolean berhasil = bus.naikkanPenumpang(p);
+        if (berhasil) {
+            System.out.println("Penumpang berhasil ditambahkan!\n");
+        } else {
+            System.out.println("Penumpang gagal naik ke bus.\n");
+        }
+    }
