@@ -1,4 +1,4 @@
-# PROJECT_INDIVIDU_PBOProjek Individu – Simulasi Bus Trans Koetaradja
+# PROJECT_INDIVIDU_PBO-Simulasi Bus Trans Koetaradja
 Program Berbasis Java (BlueJ / VSCode / Terminal)
 
 **1. Deskripsi Program**
