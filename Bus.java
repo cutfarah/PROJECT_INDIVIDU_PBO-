@@ -174,3 +174,30 @@ public class Bus {
         return null;
     }
 
+       private String formatDaftarNama(List<Penumpang> list) {
+        if (list.isEmpty()) {
+            return "<kosong>";
+        }
+        // contoh penggunaan lambda + method reference
+        return list.stream()
+                   .map(Penumpang::getNama)
+                   .collect(Collectors.joining(", "));
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("===== BUS TRANS KOETARADJA ======\n");
+        sb.append("Penumpang Biasa    : ")
+          .append(formatDaftarNama(penumpangBiasa)).append("\n");
+        sb.append("Penumpang Prioritas: ")
+          .append(formatDaftarNama(penumpangPrioritas)).append("\n");
+        sb.append("Penumpang Berdiri  : ")
+          .append(formatDaftarNama(penumpangBerdiri)).append("\n");
+        sb.append("---------------------------------\n");
+        sb.append("Jumlah Penumpang   : ").append(getTotalPenumpang()).append("\n");
+        sb.append("Total Pendapatan   : ").append(totalPendapatan).append("\n");
+        sb.append("=================================\n");
+        return sb.toString();
+    }
+}
