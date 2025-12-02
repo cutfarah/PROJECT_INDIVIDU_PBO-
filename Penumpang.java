@@ -23,3 +23,33 @@ public class Penumpang extends Orang implements PembayarBus {
             return KategoriPenumpang.BIASA;
         }
     }
+
+ public int getId() {
+        return id;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public boolean getHamil() {
+        return hamil;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public KategoriPenumpang getKategori() {
+        return kategori;
+    }
+
+    public boolean isPrioritas() {
+        return kategori == KategoriPenumpang.PRIORITAS;
+    }
+
+    public void tambahSaldo(int saldoBaru) {
+        if (saldoBaru > 0) {
+            saldo += saldoBaru;
+        }
+    }
