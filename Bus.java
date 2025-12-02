@@ -134,3 +134,43 @@ public class Bus {
             return false;
         }
     }
+
+       /**
+     * Turunkan penumpang berdasarkan NAMA.
+     */
+    public boolean turunkanPenumpang(String nama) {
+        if (nama == null || nama.trim().isEmpty()) {
+            return false;
+        }
+
+        // Cari di tiap list
+        Penumpang target = cariPenumpangDenganNama(nama, penumpangBiasa);
+        if (target != null) {
+            penumpangBiasa.remove(target);
+            return true;
+        }
+
+        target = cariPenumpangDenganNama(nama, penumpangPrioritas);
+        if (target != null) {
+            penumpangPrioritas.remove(target);
+            return true;
+        }
+
+        target = cariPenumpangDenganNama(nama, penumpangBerdiri);
+        if (target != null) {
+            penumpangBerdiri.remove(target);
+            return true;
+        }
+
+        return false;
+    }
+
+    private Penumpang cariPenumpangDenganNama(String nama, List<Penumpang> list) {
+        for (Penumpang p : list) {
+            if (p.getNama().equalsIgnoreCase(nama)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
