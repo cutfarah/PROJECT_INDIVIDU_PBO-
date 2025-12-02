@@ -16,3 +16,10 @@ public class Penumpang extends Orang implements PembayarBus {
         this.kategori = tentukanKategori();
     }
 
+ private KategoriPenumpang tentukanKategori() {
+        if (umur > 60 || umur < 10 || hamil) {
+            return KategoriPenumpang.PRIORITAS;
+        } else {
+            return KategoriPenumpang.BIASA;
+        }
+    }
