@@ -85,3 +85,37 @@ public class Bus {
             return false;
         }
 
+           boolean berhasilDitempatkan = false;
+
+        if (p.isPrioritas()) {
+            if (penumpangPrioritas.size() < MAKS_KURSI_PRIORITAS) {
+                penumpangPrioritas.add(p);
+                berhasilDitempatkan = true;
+            }
+            else if (penumpangBiasa.size() < MAKS_KURSI_BIASA) {
+                penumpangBiasa.add(p);
+                berhasilDitempatkan = true;
+            }
+            else if (penumpangBerdiri.size() < MAKS_BERDIRI) {
+                penumpangBerdiri.add(p);
+                berhasilDitempatkan = true;
+            }
+        } else {
+            // Penumpang biasa:
+            // 1. Coba kursi biasa
+            if (penumpangBiasa.size() < MAKS_KURSI_BIASA) {
+                penumpangBiasa.add(p);
+                berhasilDitempatkan = true;
+            }
+            // 2. Kalau kursi biasa penuh, boleh berdiri
+            else if (penumpangBerdiri.size() < MAKS_BERDIRI) {
+                penumpangBerdiri.add(p);
+                berhasilDitempatkan = true;
+            }
+            // Tidak boleh duduk di kursi prioritas
+        }
+
+        if (!berhasilDitempatkan) {
+            System.out.println("Tidak ada posisi yang tersedia untuk penumpang ini.");
+            return false;
+        }
