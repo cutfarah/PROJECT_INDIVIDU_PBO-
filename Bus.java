@@ -59,3 +59,29 @@ public class Bus {
              + getJumlahPenumpangPrioritas()
              + getJumlahPenumpangBerdiri();
     }
+
+    private boolean busPenuh() {
+        return getTotalPenumpang() >= MAKS_TOTAL;
+    }
+
+    /**
+     * Mengatur logika naik penumpang:
+     * - Cek saldo cukup
+     * - Cek kapasitas bus
+     * - Atur kursi sesuai prioritas / biasa
+     */
+    public boolean naikkanPenumpang(Penumpang p) {
+        if (p == null) {
+            return false;
+        }
+
+        if (busPenuh()) {
+            System.out.println("Bus sudah penuh. Penumpang tidak dapat naik.");
+            return false;
+        }
+
+        if (p.getSaldo() < ONGKOS_BUS) {
+            System.out.println("Saldo penumpang tidak cukup untuk naik bus.");
+            return false;
+        }
+
