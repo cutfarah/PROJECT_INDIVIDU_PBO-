@@ -23,3 +23,16 @@ public class Bus {
         penumpangBerdiri = new ArrayList<>();
         totalPendapatan = 0;
     }
+
+ // ====== Getter array ======
+    public Penumpang[] getPenumpangBiasa() {
+        return penumpangBiasa.toArray(new Penumpang[0]);
+    }
+
+    public Penumpang[] getPenumpangPrioritas() {
+        return penumpangPrioritas.toArray(new Penumpang[0]);
+    }
+
+    public Penumpang[] getPenumpangBerdiri() {
+        return penumpangBerdiri.toArray(new Penumpang[0]);
+    }
