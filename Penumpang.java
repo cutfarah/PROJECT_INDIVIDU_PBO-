@@ -5,3 +5,14 @@ public class Penumpang extends Orang implements PembayarBus {
     private boolean hamil;
     private int saldo; // dalam rupiah
     private KategoriPenumpang kategori;
+
+     public Penumpang(int id, String nama, int umur, boolean hamil) {
+        super(nama);
+        this.id = id;
+        this.umur = umur;
+        this.hamil = hamil;
+        // saldo awal sesuai soal: 10.000
+        this.saldo = 10000;
+        this.kategori = tentukanKategori();
+    }
+
